@@ -3,6 +3,7 @@ from django.contrib.auth import *
 from users.models import customeUser
 from webapp.forms import *
 from users import *
+from django.http import *
 
 # Create your views here.
 def showDataEntryForm(req):
@@ -36,3 +37,11 @@ def login(req):
 			return  render(req,'home.html')
 	else:
 		return  render(req,'login.html')
+
+def dregister(req):
+	return render(req,'users/signup.html')
+
+def latexSample(req):
+	title = req.POST['title']
+
+	return render(req,'latexSample.html',{'title':title})

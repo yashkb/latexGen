@@ -21,6 +21,12 @@ urlpatterns = [
     path('form',showDataEntryForm),
     path('signup',signupform),
     path('register',register),
-    path('login',login)
+    path('login',login),
+
+
+
+    path('dregister',dregister),
+    path('latexSample',latexSample)
+
     
 ]
