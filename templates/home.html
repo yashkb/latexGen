@@ -13,9 +13,10 @@
         </div>
         <div>
             <label>No of Section</label>
-            <input type="text" >
+            <input type="text" id="noSecTxt">
+            <input type="button" value="create" onclick="addTextBox()">
         </div>
-        <div>
+        <div id="txtdiv">
 
         </div>
 
@@ -25,7 +26,20 @@
     <script>
         function addTextBox()
         {
-
+            var n = document.getElementById("noSecTxt").value;
+            /*var txt = document.createElement("input");
+            txt.type = "text";
+            txt.id = "txt"+1
+            var txtdiv = document.getElementById("txtdiv")
+            txtdiv.appendChild(txt)*/
+            for(let i=0;i<n;i++)
+            {
+                var txt = document.createElement("input");
+                txt.type = "text";
+                txt.name = "txt"+i
+                var txtdiv = document.getElementById("txtdiv")
+                txtdiv.appendChild(txt)
+            }
         }
     </script>
 </body>
