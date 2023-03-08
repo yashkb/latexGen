@@ -3,42 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
-
 </head>
 <body>
-    <form action="latexSample" method="post" class="form-group col-md-6" >
+    <form action="latexSample" method="post">
         {%csrf_token%}
-        <div>
-            <label for="" class="form-group col-md-6">Title</label>
-            <input type="text" name="title" class="form-control">
-        </div>
-        <div>
-            <label for="">No of Section</label>
-            <input type="text" name="noSection" id="nosecbtn" class="form-control">
-            <input type="button" value="create" onclick="addTextBox()">
-        </div>
-        <div id="newTextBox">
-
-        </div>
-
-        <input type="submit" class="btn btn-primary">
+        <label for="">Title</label>
+        <input type="text" name="title">
+        <input type="submit">
     </form>
 
-
-    <script>
-        function addTextBox()
-        {
-            var n = document.getElementById("nosecbtn").value;
-            console.log(n);
-
-            var divsec = document.getElementById("newTextBox");
-            var newTextBox = document.createElement("input");
-            newTextBox.type = "text";
-            divsec.appendChild(newTextBox)
-        }
-    </script>
 </body>
 </html>
