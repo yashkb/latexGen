@@ -34,11 +34,25 @@
             txtdiv.appendChild(txt)*/
             for(let i=0;i<n;i++)
             {
-                var txt = document.createElement("input");
-                txt.type = "text";
-                txt.name = "txt"+i
+                // Creating Div for New Section
+                var newDiv = document.createElement("div");
+
+                // Creating title Text Box
+                var titletxt = document.createElement("input");
+                titletxt.type = "text";
+                titletxt.name = "titletxt"+i
+
+                // Creating TextArea for Content
+                var txtarea = document.createElement("textarea");
+                txtarea.type = "textarea";
+                txtarea.name = "txtarea" +i
+                txtarea.setAttribute("title","A")
+
                 var txtdiv = document.getElementById("txtdiv")
-                txtdiv.appendChild(txt)
+                newDiv.appendChild(titletxt);
+                newDiv.appendChild(txtarea);
+                txtdiv.appendChild(newDiv);
+
             }
         }
     </script>
