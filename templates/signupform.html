@@ -6,6 +6,47 @@
 	<title></title>
 </head>
 <body>
+{% extends "base.html"%}
+{% block content%}
+
+	<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Form with Input in Center -->
+				<form action="register" method="post" class="text-center border border-secondary rounded p-4">
+				{% csrf_token %}
+			 		<div>
+						<label class="form-label">Email</label>
+						<input type="text" name="email" required class="form-control">
+					</div>
+
+					<!--UserName Commented-->
+					<!--<div>
+						<label>Username</label>
+						<input type="text" name="username">
+					</div>-->
+
+					<div>
+						<label class="form-label">Password</label>
+						<input type="password" name="password" required class="form-control">
+					</div>
+
+					<!--Confirm password commented-->
+					<!--<div>
+						<label>Confirm password</label>
+						<input type="password" name="password2">
+					</div>-->
+
+					<!--{{ form }}-->
+					<div class="mb-1"></div>
+					<input type="submit" class="btn btn-primary mx-auto">
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
 	<p>Register</p>
 	<form action="register" method="post">
 		{% csrf_token %}
@@ -36,5 +77,6 @@
 		
 	</form>
 	<a href="login">Login</a>
+{% endblock%}
 </body>
 </html--->

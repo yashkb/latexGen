@@ -14,7 +14,7 @@ def signupform(req):
 
 def register(req):
 
-	if req.method == 'POST':
+	if req.method == 'POST' and req.POST:
 		email = req.POST['email']
 		password = req.POST['password']
 		form = customeUser(email=email,password=password)
