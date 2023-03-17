@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+{% extends "base.html" %}
+{% block content %}
+
     <form action="latexSample" method="post">
         {%csrf_token%}
         <div>
@@ -13,7 +16,7 @@
         </div>
         <div>
             <label>No of Section</label>
-            <input type="text" id="noSecTxt">
+            <input type="text" id="noSecTxt" name="noOfSection">
             <input type="button" value="create" onclick="addTextBox()">
         </div>
         <div id="txtdiv">
@@ -56,5 +59,7 @@
             }
         }
     </script>
+
+{% endblock %}
 </body>
 </html>

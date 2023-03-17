@@ -43,5 +43,16 @@ def dregister(req):
 
 def latexSample(req):
 	title = req.POST['title']
+	noOfSection = req.POST['noOfSection']
 
-	return render(req,'latexSample.html',{'title':title})
+	noOfSection = int(noOfSection)
+	list = []
+	list.append(title)
+	for i in range(noOfSection):
+		i = str(i)
+		titletxt = req.POST['titletxt'+i]
+		txtarea = req.POST['txtarea'+i]
+		list.append(titletxt)
+		list.append(txtarea)
+
+	return render(req,'latexSample.html',{'data':list})

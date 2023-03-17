@@ -5,19 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-<form action="login" method="post">
-    {% csrf_token %}
-    <div>
-        <label for="">email</label>
-        <input type="text" name="email">
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Login</h1>
     </div>
-    <div>
-        <label for="">password</label>
-        <input type="password" name="password">
-    </div>
-    <div>
-        <input type="submit" value="Login">
-    </div>
-</form>
+  </div>
+</div>
+
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+
+		<div class="row">
+			<div class="col-md-12">
+                <form action="login" method="post" class="text-center border border-secondary rounded p-4">
+                    {% csrf_token %}
+                    <div>
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" name="email" class="form-control">
+                    </div>
+                    <div>
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                    <div class="mb-1">
+                        <input type="submit" value="Login" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+		</div>
+	</div>
+{% endblock %}
 </body>
 </html>
